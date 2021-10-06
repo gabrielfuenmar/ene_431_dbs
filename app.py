@@ -26,10 +26,10 @@ from sklearn import metrics
 import os
 import requests
 
-files=['base_values/17_EUROPA_POINT_9333668_2018_3_9.parquet',
- 'base_values/22_LIMASSOL_8727836_2019_1_30.parquet',
- 'base_values/83_NAPOLI_9535436_2019_2_5.parquet',
- 'base_values/last_piraues']
+files=['base_values/17_EUROPA_POINT_9333668_2018_3_9.csv',
+ 'base_values/22_LIMASSOL_8727836_2019_1_30.csv',
+ 'base_values/83_NAPOLI_9535436_2019_2_5.csv',
+ 'base_values/last_piraues.csv']
 
 port=gpd.read_file("med_berths.geojson")
 
@@ -41,7 +41,7 @@ MAPBOX_TOKEN=os.environ.get('MAPBOX_TOKEN', None)
 
 def fig_update(val=0):
     
-    df = pd.read_parquet(files[val])
+    df = pd.read_csv(files[val])
 
     df=df.reset_index(drop=True)
     
@@ -169,7 +169,7 @@ def score_update(selected,n_click,forw,back,path):
     
     if selected is not None and "submit-val" in changed_id:
         li = [item.get('pointIndex') for item in selected["points"]]
-        df_in = pd.read_parquet(files[count.val])
+        df_in = pd.read_csv(files[count.val])
 
         df_in=df_in.reset_index(drop=True)
         
