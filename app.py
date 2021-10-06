@@ -26,7 +26,7 @@ from sklearn import metrics
 import os
 import requests
 
-files=[i for i in glob.glob('base_values\*')]
+files=[i for i in glob.glob('\base_values\*')]
 
 port=gpd.read_file("med_berths.geojson")
 
