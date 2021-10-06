@@ -82,7 +82,9 @@ def fig_update(val=0):
     
     return fig
 
-app = dash.Dash()
+app = dash.Dash(__name__,
+                meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1"}])
+server=app.server
 
 app.title="ENE 431 Anchoring selection"
 
