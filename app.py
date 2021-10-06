@@ -19,7 +19,6 @@ import dash_html_components as html
 
 import plotly.graph_objs as go
 import json
-import pandas as pd
 import numpy as np
 
 import plotly.express as px
