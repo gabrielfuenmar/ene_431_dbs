@@ -118,10 +118,6 @@ app.layout = html.Div([dcc.Location(id='url', refresh=False),
     ])
 
 
-app.css.append_css({
-    'external_url': 'https://codepen.io/chriddyp/pen/bWLwgP.css'
-})
-
 
 ##Keep track class
 class count:
