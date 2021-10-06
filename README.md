@@ -1,2 +1,2 @@
-# ene_431_dbs
+# Workshop of anchoring recognition for shipping course
 Workshop for anchoring recognition
