@@ -11,11 +11,11 @@ import geopandas as gpd
 import glob
 
 import dash
-from dash import dash_table
+import dash_table
 
 from dash.dependencies import Input, Output
 from dash import dcc
-from dash import html
+import dash_html_components as html
 
 import plotly.graph_objs as go
 import json
