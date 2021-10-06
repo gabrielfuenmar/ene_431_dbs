@@ -22,6 +22,8 @@ import numpy as np
 
 import plotly.express as px
 from sklearn import metrics
+import os
+import requests
 
 files=[i for i in glob.glob('base_values\*')]
 
@@ -30,6 +32,8 @@ port=gpd.read_file("med_berths.geojson")
 from_json = port.to_json()
 
 geoJSON = json.loads(from_json)
+
+MAPBOX_TOKEN=os.environ.get('MAPBOX_TOKEN', None)
 
 def fig_update(val=0):
     
@@ -61,7 +65,7 @@ def fig_update(val=0):
                 color = 'rgba(163,22,19,0.2)'
             )
         ],
-        accesstoken = 'pk.eyJ1IjoiZ2FicmllbGZ1ZW5tYXIiLCJhIjoiY2s4ZXUxNGVpMDBmMjNkbWwxYXNjNjY0aCJ9.7nklUvXd2r0H7LYeY0EEAA',
+        accesstoken = MAPBOX_TOKEN,
         center = dict(
             lat = df.lat.mean(),
             lon = df.lon.mean(),
